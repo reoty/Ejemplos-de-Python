@@ -154,8 +154,23 @@ print(Operaciones.sumar(5, 5))
 print(Operaciones.restar(5, 5))
 print(Operaciones.multiplicar(5, 5))
 print(Operaciones.dividir(5, 5))
-#se aplica el if
 print(Operaciones.dividir(5, 0))
+#ejemplo básico de calculadora.
+x=int(input("Ingrese el primer número: \n > ")) #podemos indicar al usuario que ingresar desde una misma linea.
+y=int(input("Ingrese el segundo número \n >"))
+op=input("Ingrese alguna opción \n (1.) Sumar \n (2.) Restar \n (3.) Multiplicar \n (4.) Dividir \n >")
+#se aplica el if
+if op == "1":
+    print(Operaciones.sumar(x,y)) #aqui solo identificamos las variables porque ya le pedimos los datos al usuario antes,
+elif op == "2":
+    print(Operaciones.restar(x,y))
+elif op == "3":
+    print(Operaciones.multiplicar(x,y))
+elif op == "4":
+    print(Operaciones.dividir(x,y))
+else:
+    print("Opción incorrecta")
+input("Enter para continuar...") #una pausa que continua con enter de parte del usuario.
 #En caso de no usar @staticmethod será necesario declarra una instancia que es lo que Python espera, si no se hace dará error.
 #usamos Self para que python espere esa instancia.
 class Operaciones2:
