@@ -5,26 +5,28 @@ def calcular_costo_total(plan, meses):
         "Estándar": 1500,
         "Premium": 2000
     }
-    return precios[plan] * meses #Entendiendo como funciona el return podemos hacer que el retorno sea el cálculo en si que necesitamos.
+    return precios[plan] * meses
 # Solicitar el nombre del usuario
 nombre = input("Ingrese su nombre: ")
 # Solicitar el correo electrónico del usuario
 correo = input("Ingrese su correo electrónico: ")
-# Solicitar la selección del plan de suscripción
-print("Seleccione su plan de suscripción: \n 1. Plan Básico: $1000/mes \n 2. Plan Estándar: $1500/mes \n 3. Plan Premium: $2000/mes")
-#me gusta hacerlo asi :v
-opcion = input("Ingrese el número de su opción: ")
-
-if opcion == "1": #El retorno va a multiplicar  los meses asi que podemos crear if más cortos.
-    plan = "Básico"
-elif opcion == "2":
-    plan = "Estándar"
-elif opcion == "3":
-    plan = "Premium"
-else:
-    print("Opción no válida")
+# Inicializar la variable de plan como None
+plan = None
+# Bucle para asegurar que el usuario seleccione una opción válida
+while plan is None:
+    print("Seleccione su plan de suscripción: \n 1. Plan Básico: $1000/mes \n 2. Plan Estándar: $1500/mes \n 3. Plan Premium: $2000/mes")
+    opcion = input("Ingrese el número de su opción: ")
+    
+    if opcion == "1":
+        plan = "Básico"
+    elif opcion == "2":
+        plan = "Estándar"
+    elif opcion == "3":
+        plan = "Premium"
+    else:
+        print("Opción no válida. Por favor, seleccione una opción válida.")
 # Solicitar la duración de la suscripción en meses
-meses = int(input("Ingrese la duración de la suscripción en meses: ")) #aquí le damos el valor al retorno.
+meses = int(input("Ingrese la duración de la suscripción en meses: "))
 # Calcular el costo total utilizando la función
 costo_total = calcular_costo_total(plan, meses)
 # Generar el reporte
@@ -37,5 +39,4 @@ Plan Seleccionado: {plan}
 Duración de la Suscripción: {meses} meses
 Costo Total: ${costo_total}
 """
-
-print(reporte) #descubrí que se podía hacer esto (sirve bastante en bases de datos, también se puede reciclar texto o crear funciones con ṕalabras, lo que se te ocurra.)
+print(reporte)
